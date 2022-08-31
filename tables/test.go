@@ -21,7 +21,7 @@ func TestSomeTable() *schema.Table {
 			{
 				Name:        "column2",
 				Description: "Test Column 2",
-				Type:        schema.TypeBigInt,
+				Type:        schema.TypeInt,
 			},
 		},
 	}

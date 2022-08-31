@@ -17,6 +17,6 @@ func (*TestClient) Logger() *zerolog.Logger {
 	return &log.Logger
 }
 
-func Configure(ctx context.Context, p *plugins.SourcePlugin, s specs.SourceSpec) (schema.ClientMeta, error) {
+func Configure(ctx context.Context, p *plugins.SourcePlugin, s specs.Source) (schema.ClientMeta, error) {
 	return &TestClient{}, nil
 }

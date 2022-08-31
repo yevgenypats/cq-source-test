@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/cloudquery/cq-source-test/plugin"
 	"github.com/cloudquery/plugin-sdk/serve"
+	"github.com/yevgenypats/cq-source-test/plugin"
 )
 
 func main() {

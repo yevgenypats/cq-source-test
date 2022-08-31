@@ -1,10 +1,10 @@
 package plugin
 
 import (
-	"github.com/cloudquery/cq-source-test/client"
-	"github.com/cloudquery/cq-source-test/tables"
 	"github.com/cloudquery/plugin-sdk/plugins"
 	"github.com/cloudquery/plugin-sdk/schema"
+	"github.com/yevgenypats/cq-source-test/client"
+	"github.com/yevgenypats/cq-source-test/tables"
 )
 
 const exampleConfig = `
@@ -17,13 +17,13 @@ var (
 )
 
 func Plugin() *plugins.SourcePlugin {
-	return &plugins.SourcePlugin{
-		Name:      "test",
-		Version:   Version,
-		Configure: client.Configure,
-		Tables: []*schema.Table{
+	return plugins.NewSourcePlugin(
+		"test",
+		Version,
+		[]*schema.Table{
 			tables.TestSomeTable(),
 		},
-		ExampleConfig: exampleConfig,
-	}
+		client.Configure,
+		plugins.WithSourceExampleConfig(exampleConfig),
+	)
 }
